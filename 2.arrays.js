@@ -82,12 +82,6 @@ myFunction([1,1,1,2]);
 myFunction(['10',10,10,10]);
 
 
-let a = [1, 2, 3, 4, 5];
-let b = Array.from(a);
-b[2] = 12;
-console.log(a, b)
-
-
 // Create a range of numbers:
 // Write a function that takes two numbers, say min and max, as arguments
 // Return an array of numbers in the range min to max
@@ -116,7 +110,37 @@ myFunction(['I', 'need', 'candy']);
 // Write a function that takes an array and a number, say num, as arguments
 // Sum up all array elements with a value greater than num
 // Return the sum
-function myFunction() {
-
-	return
+function myFunction(arr, num) {
+	console.log( arr.filter((item) => item > num).reduce((a, b) => a + b) );
  }
+
+ myFunction([1, 2, 3, 4, 5, 6, 7], 2)
+ myFunction([-10, -11, -3, 1, -4], -3)
+ myFunction([78, 99, 100, 101, 401], 99)
+
+
+//  Merge an arbitrary number of arrays:
+// Write a function that takes arguments an arbitrary number of arrays
+// It should return an array containing the values of all arrays
+
+function myFunction(...args) {
+	console.log(args.flat())
+ }
+ myFunction([1, 2, 3], [4, 5, 6])
+ myFunction(['a', 'b', 'c'], [4, 5, 6])
+ myFunction([true, true], [1, 2], ['a', 'b'])
+
+
+//  Merge two arrays with duplicate values:
+// Write a function that takes two arrays as arguments
+// Merge both arrays and remove duplicate values
+// Sort the merge result in ascending order
+// Return the resulting array
+
+function myFunction(...args) {
+	let arr = args.flat();
+	let sorted = arr.sort((a, b) => a - b);
+	console.log([...new Set(sorted)])
+ }
+ myFunction([1, 2, 3], [3, 4, 5]);
+ myFunction([-10, 22, 333, 42], [-11, 5, 22, 41, 42]);
