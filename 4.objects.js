@@ -112,10 +112,7 @@ function myFunction(a, b) {
 //   }
 
 function myFunction(arr, str) {
-    for(let i = 0; i < arr.length; i++) {
-        Object.assign(arr[i], {'continent': str})
-    }
-    console.log(arr)
+    console.log(arr.map((obj) => ({...obj, continent: str})));
  }
  myFunction([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia');
 //  myFunction([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Paris', country: 'France' }], 'Europe');
