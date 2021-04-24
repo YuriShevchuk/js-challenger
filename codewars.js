@@ -106,3 +106,115 @@ console.log( removed);
 
 removeDuplicates([1,1,1,3,3,2,2,6,7,1,2,5]) ;
 removeDuplicates([5, 4, 1, 2, 2, 1, 5, 6])
+
+
+
+// Geometry Basics: Distance between points in 2D  ✅
+  function distanceBetweenPoints(a, b) {
+	let x = b.x - a.x;
+	let y = b.y - a.y;
+console.log(x,y)
+	let sqrt = Math.sqrt( (b.x - a.x)**2 + (b.y - a.y)**2)
+	console.log(sqrt)
+  }
+  distanceBetweenPoints({x: 3,y: 3}, {x: 3,y: 3})
+  distanceBetweenPoints({x: 1,y: 6}, {x: 4,y: 2})
+  distanceBetweenPoints({x: -10.2,y: 12.5}, {x: 0.3,y: 14.7})
+
+
+//   String repeat  ✅
+  function repeatStr (n, s) {
+	let str = n.repeat(s);
+	str
+	console.log(str);
+  }
+
+  repeatStr('*', 5)
+  repeatStr('ha ', 2)
+  repeatStr('*', 5)
+
+
+  function add(x, y){
+	if (y == 0)
+	return x;
+else
+	return add(x ^ y, (x & y) << 1);
+}
+
+console.log(add(undefined, undefined));
+console.log(add(true, false));
+console.log(add("21","21"));
+console.log(add(1994,1994));
+
+
+// Calculate average  ✅
+// Write a function which calculates the average of 
+// the numbers in a given list.
+// Note: Empty arrays should return 0.
+function find_average(array) {
+let item = 0
+for (const i in array) {
+	item += array[i]
+}
+!array.length ? item : item /= array.length
+	return item
+}
+
+console.log(  find_average([1,2,3,4]))
+console.log(  find_average([]))
+
+
+// How low do you go?  ✅
+// Your job is to return an array containing 
+// the lowest number of reps that you were able to complete on each day. 
+const lowest = (...a) => a.map(v => Math.min(...v))
+console.log(lowest([9,2,3], [3,5,6]))
+
+
+
+// Remove First and Last Character  ✅
+// Your goal is to create a function that removes the first and last characters of a string. 
+// You're given one parameter, the original string.
+//  You don't have to worry with strings with less than two characters.
+// 1)
+function removeCharI(str){
+	let edited = str.split("");
+	edited.pop();
+	edited.shift();
+	return edited.join("");
+   };
+console.log(removeCharI('javascript'))
+
+// 2)
+function removeCharII(str){
+	return str.slice(1,-1)
+}
+console.log(removeCharII('javascript'))
+
+
+
+// Highest Letter Number in alphabet from string  ✅
+function highestLetterNumber(str) {
+	let arr = str.toLowerCase().split('');
+	let pushed = [];
+	for (const ar of arr) {
+		pushed.push(ar.charCodeAt() - 'a'.charCodeAt() + 1)
+	}
+	console.log(pushed)
+	return Math.max(...pushed)
+}
+
+console.log(highestLetterNumber('string'))
+console.log(highestLetterNumber('javascript'))
+
+
+// Extending JavaScript Objects: Get First & Last Array Element  ✅
+Array.prototype.first = function() {
+	return this[0]
+  }
+Array.prototype.last = function() {
+	return this[this.length-1]
+  }
+
+console.log(  [2,3,4,5].first())
+console.log(  [2,3,4,5].last())
